@@ -5,7 +5,7 @@
 
 # change 'tests => 1' to 'tests => last_test_to_print';
 
-use Test::More "no_plan";
+use Test::More tests => 20;
 BEGIN { use_ok('Crypt::Cipher') };
 
 
@@ -26,10 +26,9 @@ my $trobj = Regexp::Tr->new($domain,$mapping);
 # Test encipher
 {
     ok($obj->can("encipher"), "Method 'encipher' exists.");
-    my $string = "some string";
-    my $storage = $obj->encipher($string);
+    my $storage = $obj->encipher("some string");
     ok($storage, "Encipher returned something");
-    ok($storage eq $trobj->trans($string), "Return value is correct.");
+    ok($storage eq $trobj->trans("some string"), "Return value is correct.");
 }
     
 # Test encipher_scalar

@@ -5,8 +5,8 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     'NAME'		=> 'Crypt::Cipher',
     'VERSION_FROM'	=> 'Cipher.pm', # finds $VERSION
-    'PREREQ_PM'		=> {}, # e.g., Module::Name => 1.1
+    'PREREQ_PM'		=> {'Regexp::Tr' => 0.04}, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM => 'Cipher.pm', # retrieve abstract from module
-       AUTHOR     => 'Robert Fischer <chia@localdomain>') : ()),
+       AUTHOR     => 'Robert Fischer <chia@cpan.org>') : ()),
 );
